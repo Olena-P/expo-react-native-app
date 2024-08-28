@@ -1,0 +1,30 @@
+node_modules/
+
+# Expo
+.expo/
+
+# IDE/Editor
+.idea/
+
+# Output directories
+dist/
+web-build/
+
+# macOS
+.DS_Store
+
+# Expo-related sensitive files
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# npm
+npm-debug.*
+
+# Backup files
+*.orig.*
+
+# Expo generated file
+expo-env.d.ts
