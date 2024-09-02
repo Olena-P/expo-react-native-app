@@ -6,6 +6,7 @@ import {ExternalLink} from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import {ThemedText} from '@/components/ThemedText';
 import {ThemedView} from '@/components/ThemedView';
+import DataCollectionExample from "@/components/DataCollectionExample";
 
 export default function TabTwoScreen() {
   return (
@@ -107,6 +108,27 @@ export default function TabTwoScreen() {
             </ThemedText>
           ),
         })}
+      </Collapsible>
+      <Collapsible title="FlatList and ScrollView">
+        <ThemedText>
+          This template includes an example of a <ThemedText type="defaultSemiBold">FlatList</ThemedText>{' '}
+          component.
+        </ThemedText>
+        <ThemedText>
+          <ThemedText type="defaultSemiBold">FlatList</ThemedText> is best used when you have a large number of
+          identical elements in a list, as it provides better performance and efficiency for rendering long lists by
+          only rendering items that are currently visible on the screen. For optimal performance, FlatList has special
+          props for optimization, which you can read about in the official documentation.
+        </ThemedText>
+        <ThemedText>
+          <ThemedText type="defaultSemiBold">ScrollView</ThemedText> is generally used when you have a large number of
+          non-uniform elements on the screen, allowing for scrolling through content. Unlike FlatList, ScrollView
+          renders all its children at once, which can lead to performance issues with long lists.
+        </ThemedText>
+        <ExternalLink href="https://reactnative.dev/docs/optimizing-flatlist-configuration#props">
+          <ThemedText type="link">Learn more</ThemedText>
+        </ExternalLink>
+        <DataCollectionExample/>
       </Collapsible>
     </ParallaxScrollView>
   );
