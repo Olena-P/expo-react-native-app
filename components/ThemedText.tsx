@@ -1,6 +1,5 @@
 import {Platform, StyleSheet, Text, type TextProps} from 'react-native';
-
-
+import {Colors} from '@/constants/Colors';
 import {useThemeColor} from '@/hooks/useThemeColor';
 
 export type ThemedTextProps = TextProps & {
@@ -50,21 +49,21 @@ const styles = StyleSheet.create({
     lineHeight: 32,
     ...Platform.select({
       ios: {
-        color: 'purple'
+        color: Colors.light.primary,
       },
       android: {
-        color: 'blue'
+        color: Colors.light.accent,
       }
     })
   },
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: Platform.OS === 'ios' ? 'green' : 'red',
+    color: Platform.OS === 'ios' ? Colors.light.accent : Colors.dark.primary,
   },
   link: {
     lineHeight: 30,
     fontSize: 16,
-    color: '#0a7ea4',
+    color: Colors.light.primary,
   },
 });

@@ -1,11 +1,12 @@
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Colors} from "@/constants/Colors";
 
 type Props = {
   title: string;
   onPress: () => void;
 };
 
-const BigButton = ({ title, onPress }: Props) => {
+const BigButton = ({title, onPress}: Props) => {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
       <Text style={styles.text}>{title}</Text>
@@ -15,7 +16,7 @@ const BigButton = ({ title, onPress }: Props) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'blue',
+    backgroundColor: Colors.light.primary,
     padding: 20,
     borderRadius: 10,
   },
