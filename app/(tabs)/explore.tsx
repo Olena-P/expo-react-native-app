@@ -40,12 +40,36 @@ export default function TabTwoScreen() {
         <ThemedText>
           For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
           <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
+          different screen densities.
         </ThemedText>
+
+        <ThemedText type="subtitle">Static Image (Local File)</ThemedText>
         <Image source={require('@/assets/images/react-logo.png')} style={{alignSelf: 'center'}}/>
         <ExternalLink href="https://reactnative.dev/docs/images">
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
+
+        <ThemedText type="subtitle">Background Image (Network)</ThemedText>
+        <ImageBackground
+          source={{uri: 'https://legacy.reactjs.org/logo-og.png'}}
+          resizeMode="cover"
+          style={styles.imageBackground}
+        >
+          <View style={styles.textContainer}>
+            <Text style={styles.textOther}>{'Happy '}</Text>
+            <Text style={styles.textHighlight}>Knowledge Day</Text>
+            <Text style={styles.textOther}>{' to everyone!'}</Text>
+          </View>
+        </ImageBackground>
+
+        <ThemedText type="subtitle">Inline Local Image</ThemedText>
+        <Image source={require('@/assets/images/knowledge-day.webp')} style={styles.localImage}/>
+
+        <ThemedText type="subtitle">Network Image</ThemedText>
+        <Image
+          source={{uri: 'https://reactjs.org/logo-og.png'}}
+          style={styles.networkImage}
+        />
       </Collapsible>
       <Collapsible title="Custom fonts">
         <ThemedText>
@@ -84,22 +108,9 @@ export default function TabTwoScreen() {
           ),
         })}
       </Collapsible>
-
-      <ImageBackground
-        source={{uri: 'https://legacy.reactjs.org/logo-og.png'}}
-        resizeMode="cover"
-        style={styles.imageBackground}
-      >
-        <View style={styles.textContainer}>
-          <Text style={styles.textOther}>{'Happy '}</Text>
-          <Text style={styles.textHighlight}>Knowledge Day</Text>
-          <Text style={styles.textOther}>{' to everyone!'}</Text>
-        </View>
-      </ImageBackground>
     </ParallaxScrollView>
   );
 }
-
 
 const styles = StyleSheet.create({
   headerImage: {
@@ -111,6 +122,16 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+  },
+  localImage: {
+    width: 150,
+    height: 150,
+    alignSelf: 'center',
+  },
+  networkImage: {
+    width: 700,
+    height: 700,
+    alignSelf: 'center',
   },
   imageBackground: {
     height: 500,
@@ -130,4 +151,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
